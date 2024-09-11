@@ -1,0 +1,52 @@
+/* HeaderStyle.css */
+
+header {
+    width: 100%;
+    background-color: #817979;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+.logo-name{
+    margin-left: 15px;
+}
+
+.navbar{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin-right: 15px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul .callback{
+    background: #3a2d2d;
+    border-radius: 9px;
+    width: 130px;
+}
