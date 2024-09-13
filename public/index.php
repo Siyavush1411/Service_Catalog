@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
     <link rel="stylesheet" href="../assets/css/Card_style.css">
+    <link rel="stylesheet" href="../assets/css/Button_style.css">
     <link rel="stylesheet" href="../assets/css/Header_style.css"> 
     <link rel="stylesheet" href="../assets/css/Style.css"> 
+    <link rel="stylesheet" href="../assets/css/Footer_style.css">
 </head>
 <body>
     <?php include '../template/Header.php'; ?>
@@ -21,7 +23,7 @@
         <div class="cardcontainer">
             <?php 
             $i = 0;
-            while ($i < 10) {
+            while ($i < 100) {
                 include '../template/Card_for_services.php'; 
                 $i++;
             } 

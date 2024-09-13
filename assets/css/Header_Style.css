@@ -70,25 +70,94 @@
     font-size: 3rem;
 }
 
+/*фильтр*/
+/* Стили для заголовка и навбара */
+.header {
+    background-color: #3a2d2d;
+    padding: 20px;
+}
 
-.full-screen-section {
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-name {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0;
+    position: relative; /* Для выпадающего меню */
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh; /* Занимает всю высоту экрана */
-    background: linear-gradient(135deg, #3a2d2d, #817979); /* Градиентный фон */
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-item a {
     color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-item a:hover {
+    color: #ccc;
+}
+
+/* Стили для выпадающего меню */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Отображать выпадающее меню под логотипом */
+    left: -50px; /* Смещаем влево относительно логотипа */
+    background-color: #817979;
+    padding: 10px;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Отображаем поверх других элементов */
+}
+
+.dropdown-menu li {
+    margin-bottom: 10px;
+    border-bottom: solid 1px #fff;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 120px;
     text-align: center;
-    padding: 0 20px; /* Отступы по бокам */
 }
 
-.full-screen-content {
-    max-width: 800px; /* Максимальная ширина контента */
+/* Корректировка z-index для навбара и выпадающего меню */
+.header, .dropdown-menu {
+    z-index: 999;
 }
 
-.main-heading {
-    font-size: 3rem; /* Размер заголовка */
-    margin: 0;
-    font-weight: bold; /* Жирное начертание */
-}
+
 
