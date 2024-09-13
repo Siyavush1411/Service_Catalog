@@ -2,3 +2,34 @@ body{
     margin: 0;
     padding: 0;
 }
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+    max-width: 1200px;
+    margin: auto; /* Центрируем контейнер по горизонтали */
+}
+
+.full-screen-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+    background: linear-gradient(135deg, #3a2d2d, #817979); /* Градиентный фон */
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.full-screen-content {
+    max-width: 800px; 
+}
+
+.main-heading {
+    font-size: 3rem; 
+    margin: 0;
+    font-weight: bold; 
+}
+

@@ -1,51 +1,94 @@
-/* HeaderStyle.css */
-
-header {
+/* Плавающий навбар */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #817979;
+    background: #3a2d2d;
     color: #fff;
     padding: 10px 0;
-    text-align: center;
+    z-index: 1000; /* Поверх остальных элементов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-.logo-name{
-    margin-left: 15px;
-}
-
-.navbar{
+.fixed-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
-nav ul {
-    display: flex;
-    align-items: center;
+.fixed-header .logo-name {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.fixed-header .navbar {
     list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
     padding: 0;
-    margin-right: 15px;
 }
 
-nav ul li {
-    margin: 0 15px;
+.fixed-header .navbar li {
+    margin: 0;
 }
 
-nav ul li a {
+.fixed-header .navbar a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.fixed-header .navbar a:hover {
+    background-color: #fff;
+    color: #3a2d2d;
 }
 
-nav ul .callback{
-    background: #3a2d2d;
-    border-radius: 9px;
-    width: 130px;
+/* Главная страница */
+.main-header {
+    height: 100vh; /* Хедер занимает всю высоту экрана */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3a2d2d, #817979); /* Градиентный фон */
+    color: #fff;
+    text-align: center;
 }
+
+.main-header-content {
+    text-align: center;
+}
+
+.main-header .logo-name {
+    font-size: 3rem;
+}
+
+
+.full-screen-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+    background: linear-gradient(135deg, #3a2d2d, #817979); /* Градиентный фон */
+    color: #fff;
+    text-align: center;
+    padding: 0 20px; /* Отступы по бокам */
+}
+
+.full-screen-content {
+    max-width: 800px; /* Максимальная ширина контента */
+}
+
+.main-heading {
+    font-size: 3rem; /* Размер заголовка */
+    margin: 0;
+    font-weight: bold; /* Жирное начертание */
+}
+
