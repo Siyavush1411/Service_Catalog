@@ -23,7 +23,7 @@
         <div class="cardcontainer">
             <?php 
             $i = 0;
-            while ($i < 100) {
+            while ($i < 50) {
                 include '../template/Card_for_services.php'; 
                 $i++;
             } 
