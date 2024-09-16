@@ -6,12 +6,10 @@
     <title>Каталог</title>
     <link rel="stylesheet" href="../assets/css/Card_style.css">
     <link rel="stylesheet" href="../assets/css/Button_style.css">
-    <link rel="stylesheet" href="../assets/css/Header_style.css"> 
-    <link rel="stylesheet" href="../assets/css/Style.css"> 
-    <link rel="stylesheet" href="../assets/css/Footer_style.css">
+    <link rel="stylesheet" href="../assets/css/style.css"> 
 </head>
 <body>
-    <?php include '../template/Header.php'; ?>
+    <?php include '../template/Navigation_bar.php'; ?>
     
     <section class="full-screen-section">
         <div class="full-screen-content">
