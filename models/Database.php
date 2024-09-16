@@ -6,11 +6,11 @@ class Database {
     private $password;
     private $pdo;
 
-    public function __construct($host, $dbname, $username, $password) {
-        $this->host = $host;
-        $this->dbname = $dbname;
-        $this->username = $username;
-        $this->password = $password;
+    public function __construct() {
+        $this->host = 'localhost';
+        $this->dbname = 'Service_catalog';
+        $this->username = 'root';
+        $this->password = '';
 
         $this->connect();
     }
