@@ -2,7 +2,7 @@
 ?>
 <header class="fixed-header">
     <div class="container">
-        <h1 class="logo-name">Каталог услуг</h1>
+        <h1 class="logo-name">Продажа недвижимости</h1>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle">Фильтр</a>
             <ul class="dropdown-menu">

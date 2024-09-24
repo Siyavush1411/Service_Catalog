@@ -1,12 +1,16 @@
 <?php 
-include './models/UserModel.php';
+include '../models/Database.php';
 
 class UserService{
 
-    private $user = new UserModel();
+    private $database;
+
+    public function __construct(){
+        $this->database = new Database();
+    }
     public function get_user_by_id($phoneNumber) : void {
 
-        $svar = $this->user->db->prepare('select * from users where number = :phoneNumber');
+        $svar = $this->database->getConnection()->prepare('select * from users where number = :phoneNumber');
         $svar->bindParam(':phoneNumber', $phoneNumber, PDO::PARAM_STR);
         $svar->execute();
         $result = $svar->fetchAll(PDO::FETCH_ASSOC);
@@ -18,12 +22,37 @@ class UserService{
         $passwordSalt = $password . hash('sha256', $password);
         $hashedPassword = hash('sha256', $passwordSalt);
 
-        $stmt = $this->user->db->prepare('INSERT INTO users (fullName, phoneNumber, login, hashedPassword) VALUES (:fullName, :phoneNumber, :login, :password)');
+        $stmt = $this->database->getConnection()->prepare('INSERT INTO users (fullName, phoneNumber, login, password) VALUES (:fullName, :phoneNumber, :login, :password)');
         $stmt->bindParam(':fullName', $fullName);
         $stmt->bindParam(':phoneNumber', $phoneNumber);
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
+    }
+
+    public function login_user($login, $password, $number) {
+
+        $stmt = $this->database->getConnection()->prepare('SELECT * FROM users WHERE login = :login and phonenumber = :number');
+        $stmt->bindParam(':login', $login);
+        $stmt->bindParam(':phonenumber', $number);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $hashPassword = $user['password'];
+
+        $passwordSalt = $password . hash('sha256', $password);
+        $hashedPassword = hash('sha256', $passwordSalt);
+        
+
+        if ($user) {
+            if ($hashedPassword == $hashPassword) {
+                return "Login successful!";
+            } else {
+                return "Invalid password!";
+            }
+        } else {
+            return "User not found!";
+        }
     }
 }
 

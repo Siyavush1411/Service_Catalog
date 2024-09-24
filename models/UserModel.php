@@ -2,17 +2,18 @@
 include './Database.php';
 
 class UserModel{
-    private $id;
-    private $fullName;
-    private $phoneNumber;
-    private $login;
-    private $password;
-    private $role;
-    private $userService;
-    private $userCard;
-    private $db = (new Database())->getConnection();
+    public $id;
+    public $fullName;
+    public $phoneNumber;
+    public $login;
+    public $password;
+    public $userService;
 
-    public function __construct() {
-        $this->db = (new Database())->getConnection();
+    public function __construct($id = null, $fullName = null, $phoneNumber = null, $login = null, $password = null, $role = null, $userService = null, $userCard = null) {
+        $this->id = $id;
+        $this->fullName = $fullName;
+        $this->phoneNumber = $phoneNumber;
+        $this->login = $login;
+        $this->password = $password;
     }
 }

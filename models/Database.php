@@ -8,7 +8,7 @@ class Database {
 
     public function __construct() {
         $this->host = 'localhost';
-        $this->dbname = 'Service_catalog';
+        $this->dbname = 'service_catalog';
         $this->username = 'root';
         $this->password = '';
 
